@@ -10,4 +10,5 @@ HthsSplash::Application.routes.draw do
   match "/about" => "home#about", :via => [:get]
   match "/faq" => "home#faq", :via => [:get]
   match "/contact" => "home#contact", :via => [:get]
+  match "/users" =>"devise/sessions#new", :via => [:get]
 end
