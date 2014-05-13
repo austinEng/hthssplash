@@ -1,17 +1,18 @@
-@mainbg: lighten(lightblue, 10%);;
-@navcolor: #B7D8EB;
+@mainbg: lighten(lightblue, 10%);
+@navcolor: darken(#86c5da, 15%);
 @accent: white;
 
 body {
   background-color: @mainbg;
+  font-family: 'Lato', sans-serif;
 }
 
 .navbar-default {
   background-color: @navcolor;
   .navbar-nav>li>a, .navbar-brand {
-    //color: #fafafa;
+    color: white;
     &:hover {
-      //color: gray;
+      color: gray;
     }
   }
 }

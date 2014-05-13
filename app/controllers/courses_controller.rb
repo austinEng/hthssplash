@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
     @course = Course.friendly.find(params[:id])
     @register = @course.registrations.build(user_id: current_user.id)
     if @register.save
-      flash[:notice] = "You have joined this group."
+      flash[:notice] = "Registration successful! :)"
       redirect_to :back
     else
       flash[:error] = "Unable to join."

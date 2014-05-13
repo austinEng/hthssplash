@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails', '4.0.2'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -18,6 +17,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'protected_attributes'
 gem 'stamp'
 group :development do
+  gem 'sqlite3'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'guard-bundler'
@@ -38,7 +38,9 @@ group :development, :test do
   gem 'rspec-rails'
 end
 group :production do
-  gem 'thin'
+  #gem 'thin'
+  gem 'rails_12factor'
+  gem 'pg'
 end
 group :test do
   gem 'capybara'
