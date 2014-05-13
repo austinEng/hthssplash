@@ -1,0 +1,18 @@
+<div class="page-title"><h1><%= @course.name %> &#8212; <%= @course.time.stamp('1:52 PM') %> @ Room <%= @course.room %></h1></div>
+<div class="section">
+  <div class="section-title"><h3>Course Information</h3></div>
+  <div class="section-body">
+    <p>Recommended Grade Level: <%= @course.grade %></p>
+    <p><%= @course.desc %></p>
+  </div>
+  <div class="section-title"><h3>Teacher Information</h3></div>
+  <div class="section-body">
+    <p>Teacher: <%= @course.teacher %></p>
+    <p><%= @course.teacher_desc %></p>
+  </div>
+  <% if @user.courses.find_by(id: @course.id) %>
+    <%= button_to "Cancel Registration", unregister_course_path(@course), class: "btn btn-danger", :method => :get  %>
+  <% else %>
+    <%= button_to "Register!", register_course_path(@course), class: "btn btn-primary", :method => :get  %>
+  <% end %>
+</div>

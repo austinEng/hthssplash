@@ -1,0 +1,10 @@
+body{background-color:#d4ebf2}
+.navbar-default{background-color:#b7d8eb}
+.alert-success{color:#7794cf;background-color:#f2feff;border-color:#c6d1e9}
+#home .page-title h1{font-size:96px}
+table td,table th{min-width:80px;padding:10px}table td+td,table th+td,table td+th,table th+th{border-left:1px solid #fff}
+table th{color:#fff}
+table tr{-webkit-transition:background .2s}table tr:nth-child(even){background-color:#ecf6f9}
+table tr:nth-child(odd){background-color:#e0f0f5}
+table tr:not(:first-of-type):hover{cursor:pointer;background-color:#fbfdfe}
+table tr:first-of-type{background-color:#86c5da}

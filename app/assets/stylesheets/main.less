@@ -1,0 +1,64 @@
+@mainbg: lighten(lightblue, 10%);;
+@navcolor: #B7D8EB;
+@accent: white;
+
+body {
+  background-color: @mainbg;
+}
+
+.navbar-default {
+  background-color: @navcolor;
+  .navbar-nav>li>a, .navbar-brand {
+    //color: #fafafa;
+    &:hover {
+      //color: gray;
+    }
+  }
+}
+
+.page-title, .section-title {
+  //color: @accent;
+}
+
+.alert-success {
+  color: #7794CF;
+  background-color: #F2FEFF;
+  border-color: #C6D1E9;
+}
+
+#home {
+  .page-title {
+    h1 {
+      font-size: 96px;
+    }
+  }
+}
+
+table {
+  td, th {
+    min-width: 80px;
+    padding: 10px;
+    &+td, &+th {
+      border-left: 1px solid white;
+    }
+  }
+  th {
+    color: white;
+  }
+  tr {
+    -webkit-transition: background 0.2s;
+    &:nth-child(even) {
+      background-color: lighten(@mainbg, 6%);
+    }
+    &:nth-child(odd) {
+      background-color: lighten(@mainbg, 3%);
+    }
+    &:not(:first-of-type):hover {
+      cursor: pointer;
+      background-color: lighten(@mainbg, 10%);
+    }
+    &:first-of-type {
+      background-color: darken(@mainbg, 20%);
+    }
+  }
+}
