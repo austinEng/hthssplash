@@ -1,31 +1,45 @@
 <div id="home">
-  <div class="page-title"><h1>HTHS Splash</h1></div>
-  <h4>Some kind of tagline here</h4>
+  <div id="bubbles">
+    <div class="page-title bubble" id="title">
+        <div class="bubble-content">
+        <h1>HTHS<br/>Splash</h1>
+        <% unless user_signed_in? %>
+          <br />
+          <%= button_to "Sign In / Register", new_user_session_path, class: "btn btn-primary", :method => :get %>
+        <% end %>
+        </div>
+    </div>
+    <div class="section bubble" id="tagline">
+      <div class="bubble-content">
+        <div class="section-title"><h4>Some kind of tagline here Some kind of tagline here Some kind of tagline here</h4></div>
+      </div>
+    </div>
+    <div class="section bubble" id="welcome">
+      <div class="bubble-content">
+        <div class="section-title"><h2>Welcome</h2></div>
+        <div class="section-body">
+          <p>askjdf;laksjdf;askdjf; a;lsdjkfa;ls df;laskdj f;alkdjf ;alskdjf;laskjd f;laskjd ;laksjd f;laskjdf ;laskdjf ;laskjdf;laskjd f;laskjdf ;laskdjf;la skdj;laskdjf ;laskjd f;laskjdf ;laskjdf ;alskjd f;laskjdf ;laskdjf ;laskjdf ;laskdjf ;laskjd ;lasdkjf ;laskdj ;laskdjf ;laskdj f;laskdjf ;laksjdf ;laksjdf ;laskjd f;laksdj f;laskjdf ;laksjd f;laskjd f;laskjdf ;laksjdf;lkjasd;lfkjasd;lfk jas</p>
+        </div>
+      </div>
+    </div>
 
-  <div class="section">
-    <div class="section-title"><h2>Welcome</h2></div>
-    <div class="section-body">
-      <p>askjdf;laksjdf;askdjf; a;lsdjkfa;ls df;laskdj f;alkdjf ;alskdjf;laskjd f;laskjd ;laksjd f;laskjdf ;laskdjf ;laskjdf;laskjd f;laskjdf ;laskdjf;la skdj;laskdjf ;laskjd f;laskjdf ;laskjdf ;alskjd f;laskjdf ;laskdjf ;laskjdf ;laskdjf ;laskjd ;lasdkjf ;laskdj ;laskdjf ;laskdj f;laskdjf ;laksjdf ;laksjdf ;laskjd f;laksdj f;laskjdf ;laksjd f;laskjd f;laskjdf ;laksjdf;lkjasd;lfkjasd;lfk jas</p>
+    <div class="section bubble" id="details">
+      <div class="bubble-content">
+        <div class="section-title"><h2>Event Details</h2></div>
+        <div class="section-body">
+          <p>jsaldfa;skdjf;aksdjf</p>
+          <p>jsaldfa;skdjf;aksdjf</p>
+          <p>jsaldfa;skdjf;aksdjf</p>
+          <p>jsaldfa;skdjf;aksdjf</p>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="section">
-    <div class="section-title"><h2>Event Details</h2></div>
-    <div class="section-body">
-      <p>jsaldfa;skdjf;aksdjf</p>
-      <p>jsaldfa;skdjf;aksdjf</p>
-      <p>jsaldfa;skdjf;aksdjf</p>
-      <p>jsaldfa;skdjf;aksdjf</p>
-    </div>
-  </div>
-  <% unless user_signed_in? %>
-    <br />
-    <%= button_to "Sign In / Register", new_user_session_path, class: "btn btn-primary", :method => :get %>
-  <% else %>
+  <% if user_signed_in? %>
     <div class="section">
       <div class="section-title"><h2>My Courses</h2></div>
       <div class="section-body">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
           <% if @courses and @courses.length > 0 %>
             <table>
               <tr>
@@ -54,3 +68,17 @@
     </div>
   <% end %>
 </div>
+<script>
+function sizeBubbles() {
+  $('.bubble').each(function(){
+    var w = $(this).width();
+    $(this).css('height', w).css('padding', w*0.1);
+    var child = $($(this).children('.bubble-content')[0]);
+    child.css('top', w/2-child.height()/2);
+  });
+}
+sizeBubbles()
+$(window).resize(function() {
+  sizeBubbles();
+});
+</script>

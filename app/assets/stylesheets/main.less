@@ -46,12 +46,107 @@ h1 {
     color: #a94442;
   }
 }
-
+#bubbles {
+  height: 650px;
+}
 #home {
-  .page-title {
+  .bubble {
+    background-color: rgba(134, 161, 218, 0.35);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    box-sizing: content-box;
+    position: absolute;
+
+    @-webkit-keyframes orbit {
+        from { -webkit-transform: rotate(0deg) translateX(5px) rotate(0deg); }
+        to   { -webkit-transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+    }
+
+    @-moz-keyframes orbit {
+        from { -moz-transform: rotate(0deg) translateX(5px) rotate(0deg); }
+        to   { -moz-transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+    }
+
+    @-o-keyframes orbit {
+        from { -o-transform: rotate(0deg) translateX(5px) rotate(0deg); }
+        to   { -o-transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+    }
+
+    @keyframes orbit {
+        from { transform: rotate(0deg) translateX(5px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(5px) rotate(-360deg); }
+    }
+
+    -webkit-animation: orbit 4s linear infinite;
+    -moz-animation: orbit 4s linear infinite;
+    -o-animation: orbit 4s linear infinite;
+     animation: orbit 4s linear infinite;
+    .bubble-content {
+      position: relative;
+    }
+    h1, h4, h2 {
+      text-align: center;
+    }
+  }
+  #title {
+    width: 40%;
+    min-width: 420px;
+    left: 5%;
     h1 {
       font-size: 96px;
     }
+    .bubble-content {
+      text-align: center;
+    }
+    -webkit-animation: orbit 7.4s linear infinite;
+    -moz-animation: orbit 7.4s linear infinite;
+    -o-animation: orbit 7.4s linear infinite;
+     animation: orbit 7.4s linear infinite;
+  }
+  #tagline {
+    left: 40%;
+    top: 50%;
+    width: 15%;
+    min-width: 180px;
+    -webkit-animation: orbit 4.4s linear infinite;
+    -moz-animation: orbit 4.4s linear infinite;
+    -o-animation: orbit 4.4s linear infinite;
+     animation: orbit 4.4s linear infinite;
+  }
+  #welcome {
+    right: 0%;
+    width: 25%;
+    top: 5%;
+    min-width: 300px;
+    -webkit-animation: orbit 6.4s linear infinite;
+    -moz-animation: orbit 6.4s linear infinite;
+    -o-animation: orbit 6.4s linear infinite;
+     animation: orbit 6.4s linear infinite;
+    .bubble-content {
+      margin-top: -10%;
+    }
+  }
+  #details {
+    right: 15%;
+    width: 18%;
+    top: 40%;
+    min-width: 200px;
+    -webkit-animation: orbit 5.4s linear infinite;
+    -moz-animation: orbit 5.4s linear infinite;
+    -o-animation: orbit 5.4s linear infinite;
+     animation: orbit 5.4s linear infinite;
+    .bubble-content {
+      margin-top: -10%;
+    }
+  }
+}
+
+#splash-img {
+  text-align:center;
+  height: 400px;
+  img {
+    max-height: 100%;
   }
 }
 
@@ -83,4 +178,7 @@ table {
       background-color: darken(@mainbg, 20%);
     }
   }
+}
+footer {
+  height: 50px;
 }
