@@ -1,0 +1,13 @@
+<div class="page-title"><h2>Update <%= @course.name %></h2></div>
+<%= simple_form_for(@course, url: admin_course_path(@course), html: {class: 'form-vertical' }, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+  <%= f.error_notification %>
+  <%= display_base_errors @course %>
+  <%= f.input :name, :autofocus => true %>
+  <%= f.input :teacher, :required => true %>
+  <%= f.input :desc %>
+  <%= f.input :teacher_desc %>
+  <%= f.input :grade %>
+  <%= f.input :time %>
+  <%= f.input :room %>
+  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+<% end %>

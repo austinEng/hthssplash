@@ -1,0 +1,38 @@
+<div id="courses-index">
+  <div class="row">
+  <div class="page-title col-xs-9"><h1>Available Courses</h1></div>
+  <div class="col-xs-3"><%= button_to 'New Course', new_admin_course_path, class: "btn btn-primary pull-right", :method => :get %></div>
+  </div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Teacher</th>
+      <th>Description</th>
+      <th>Room</th>
+      <th>Time</th>
+      <th>Students</th>
+      <th>Actions</th>
+    </tr>
+    <% @courses.each do |course| %>
+      <tr data-link="<%= admin_course_path(course)%>">
+        <td><%= course.name %></td>
+        <td><%= course.teacher %></td>
+        <td><%= truncate(course.desc, length: 200) %></td>
+        <td nowrap><%= course.room %></td>
+        <td nowrap><%= course.time.stamp('1:52 PM') %></td>
+        <td nowrap><%= course.users.length %></td>
+        <td nowrap>
+        <%= button_to 'Edit', edit_admin_course_path(course), :method => :get, class: 'btn btn-primary' %>
+        <%= button_to 'Delete', admin_course_path(course), :method => :delete, class: 'btn btn-danger', confirm: 'Are you sure you want to delete this course?' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <script>
+  $('tr').click(function() {
+    if ( $(this).attr('data-link') ) {
+      window.location = $(this).attr('data-link');
+    }
+  });
+  </script>
+</div>

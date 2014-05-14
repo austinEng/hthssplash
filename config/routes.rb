@@ -11,4 +11,9 @@ HthsSplash::Application.routes.draw do
   match "/faq" => "home#faq", :via => [:get]
   match "/contact" => "home#contact", :via => [:get]
   match "/users" =>"devise/sessions#new", :via => [:get]
+
+  namespace :admin do
+    resources :courses
+    resources :users
+  end
 end

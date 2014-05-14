@@ -4,4 +4,6 @@ class Course < ActiveRecord::Base
   friendly_id :name, use: :slugged
   has_many :registrations
   has_many :users, :through => :registrations
+  validates :name, presence: true, uniqueness: {case_senstive: false}
+  validates :teacher, presence: true
 end
