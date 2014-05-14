@@ -1,0 +1,17 @@
+<div class="page-title"><h1>Users</h1></div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>#</th>
+    <th>Courses</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr data-link="<%= admin_user_path(user)%>">
+      <td nowrap><%= user.name %></td>
+      <td nowrap><%= user.email %></td>
+      <td nowrap><%= user.courses.length %></td>
+      <td><%= user.courses.map(&:name).join(', ') %></td>
+    </tr>
+  <% end %>
+</table>

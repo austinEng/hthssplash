@@ -45,13 +45,6 @@
                 </tr>
               <% end %>
             </table>
-            <script>
-            $('tr').click(function() {
-              if ( $(this).attr('data-link') ) {
-                window.location = $(this).attr('data-link');
-              }
-            });
-            </script>
           <% else %>
             <p>You don't have for any courses yet! :(</p>
             <p><%= link_to('Click here to register!', courses_path) %></p>

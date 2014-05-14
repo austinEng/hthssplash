@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Teacher</th>
+      <th>Grade</th>
       <th>Description</th>
       <th>Room</th>
       <th>Time</th>
@@ -17,6 +18,7 @@
       <tr data-link="<%= admin_course_path(course)%>">
         <td><%= course.name %></td>
         <td><%= course.teacher %></td>
+        <td><%= course.grade %></td>
         <td><%= truncate(course.desc, length: 200) %></td>
         <td nowrap><%= course.room %></td>
         <td nowrap><%= course.time.stamp('1:52 PM') %></td>
@@ -28,11 +30,4 @@
       </tr>
     <% end %>
   </table>
-  <script>
-  $('tr').click(function() {
-    if ( $(this).attr('data-link') ) {
-      window.location = $(this).attr('data-link');
-    }
-  });
-  </script>
 </div>
