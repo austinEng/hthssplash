@@ -2,7 +2,7 @@
   <div id="bubbles">
     <div class="page-title bubble" id="title">
         <div class="bubble-content">
-        <h1>HTHS<br/>Splash</h1>
+        <%= image_tag(asset_path "logo.png") %>
         <% unless user_signed_in? %>
           <br />
           <%= button_to "Sign In / Register", new_user_session_path, class: "btn btn-primary", :method => :get %>
