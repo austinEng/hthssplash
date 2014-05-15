@@ -162,6 +162,19 @@ h1 {
   }
 }
 
+.btn {
+
+  &.btn-primary {
+    background-color: white;
+    color: black;
+    border-color: @mainbg;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
 table {
   min-width: 100%;
   td, th {
@@ -177,17 +190,17 @@ table {
   tr {
     -webkit-transition: background 0.2s;
     &:nth-child(even) {
-      background-color: lighten(@mainbg, 6%);
+      background-color: rgba(255,255,255,0.5);
     }
     &:nth-child(odd) {
-      background-color: lighten(@mainbg, 3%);
+      background-color: rgba(255,255,255,0.4);
     }
     &:not(:first-of-type):hover {
       cursor: pointer;
-      background-color: lighten(@mainbg, 10%);
+      background-color: rgba(255,255,255,0.7);
     }
     &:first-of-type {
-      background-color: darken(@mainbg, 20%);
+      background-color:rgba(255,255,255,0.2);
     }
   }
 }
