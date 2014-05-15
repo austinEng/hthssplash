@@ -1,5 +1,5 @@
 @mainbg: lighten(lightblue, 10%);
-@navcolor: #D9EAF0;
+@navcolor: rgba(255,255,255,0.3);
 @accent: white;
 
 body {
@@ -21,9 +21,10 @@ h1 {
   border: none;
   background-color: @navcolor;
   .navbar-nav>li>a, .navbar-brand {
-    color: #3F5DBE;
+    color: white;
     &:hover {
-      color: gray;
+      color: white;
+      text-shadow: 0 0 15px rgba(255,255,255,1);
     }
   }
 }
