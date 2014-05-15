@@ -1,14 +1,16 @@
 @mainbg: lighten(lightblue, 10%);
-@navcolor: darken(#86c5da, 15%);
+@navcolor: #D9EAF0;
 @accent: white;
 
 body {
   background-color: @mainbg;
   font-family: 'Lato', sans-serif;
+  background: radial-gradient(circle, #94d2f8, #3a92c8);
 }
 
 .navbar {
   margin-bottom: 40px;
+  border-radius: 0px;
 }
 
 h1 {
@@ -16,9 +18,10 @@ h1 {
 }
 
 .navbar-default {
+  border: none;
   background-color: @navcolor;
   .navbar-nav>li>a, .navbar-brand {
-    color: white;
+    color: #3F5DBE;
     &:hover {
       color: gray;
     }
@@ -114,7 +117,7 @@ h1 {
     -moz-animation: orbit 4.4s linear infinite;
     -o-animation: orbit 4.4s linear infinite;
      animation: orbit 4.4s linear infinite;
-     background-color: rgba(175, 195, 226, 0.5);
+     background-color: rgba(168, 196, 240, 0.5);
   }
   #welcome {
     right: 0%;
