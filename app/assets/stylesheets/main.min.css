@@ -5,7 +5,7 @@ h1{margin-top:0}
 .alert-success{color:#7794cf;background-color:#f2feff;border-color:#c6d1e9}
 .alert-error{background-color:#f2dede;border-color:#ebccd1;color:#a94442}
 .error .help-inline{color:#a94442}
-#bubbles{height:650px}
+#bubbles{height:650px;width:100%;position:relative}
 #home .bubble{background-color:rgba(245,249,255,0.5);border:1px solid rgba(134,161,218,0.35);-moz-border-radius:50%;-webkit-border-radius:50%;border-radius:50%;box-sizing:content-box;position:absolute;-webkit-animation:orbit 4s linear infinite;-moz-animation:orbit 4s linear infinite;-o-animation:orbit 4s linear infinite;animation:orbit 4s linear infinite}@-webkit-keyframes orbit{from{-webkit-transform:rotate(0deg) translateX(5px) rotate(0deg)} to{-webkit-transform:rotate(360deg) translateX(5px) rotate(-360deg)}}@-moz-keyframes orbit{from{-moz-transform:rotate(0deg) translateX(5px) rotate(0deg)} to{-moz-transform:rotate(360deg) translateX(5px) rotate(-360deg)}}@-o-keyframes orbit{from{-o-transform:rotate(0deg) translateX(5px) rotate(0deg)} to{-o-transform:rotate(360deg) translateX(5px) rotate(-360deg)}}@keyframes orbit{from{transform:rotate(0deg) translateX(5px) rotate(0deg)} to{transform:rotate(360deg) translateX(5px) rotate(-360deg)}}#home .bubble .bubble-content{position:relative}
 #home .bubble h1,#home .bubble h4,#home .bubble h2{text-align:center}
 #home #title{width:40%;min-width:420px;left:5%;-webkit-animation:orbit 7.4s linear infinite;-moz-animation:orbit 7.4s linear infinite;-o-animation:orbit 7.4s linear infinite;animation:orbit 7.4s linear infinite}#home #title h1{font-size:96px}
