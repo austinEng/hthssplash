@@ -17,6 +17,7 @@ h1{margin-top:0}
 #splash-img{text-align:center;height:400px}#splash-img img{max-height:100%}
 .btn.btn-primary{background-color:#fff;color:#000;border-color:#d4ebf2}.btn.btn-primary:hover{background-color:#ddd}
 .bubble .btn.btn-primary{color:#fff;background-color:#5ea1db;border-color:#4190d5}.bubble .btn.btn-primary:hover{background-color:#3276b1}
+.section:not(.bubble) .section-body p{text-shadow:1px 1px 5px rgba(0,0,0,0.37);color:#d5faff}
 table{min-width:100%}table td,table th{min-width:80px;padding:10px}table td+td,table th+td,table td+th,table th+th{border-left:1px solid #fff}
 table th{color:#fff}
 table tr{-webkit-transition:background .2s}table tr:nth-child(even){background-color:rgba(255,255,255,0.5)}
