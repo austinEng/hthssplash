@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  attr_accessible :name, :teacher, :desc, :teacher_desc, :grade, :time, :room
+  attr_accessible :name, :teacher, :desc, :teacher_desc, :grade, :time, :room, :session_1, :session_2, :session_3, :session_4
   extend FriendlyId
   friendly_id :name, use: :slugged
   has_many :registrations

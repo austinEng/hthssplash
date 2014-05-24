@@ -11,17 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515061414) do
+ActiveRecord::Schema.define(version: 20140523185515) do
 
   create_table "courses", force: true do |t|
-    t.string "name"
-    t.string "teacher"
-    t.text   "desc"
-    t.text   "teacher_desc"
-    t.string "grade"
-    t.time   "time"
-    t.string "room"
-    t.string "slug"
+    t.string  "name"
+    t.string  "teacher"
+    t.text    "desc"
+    t.text    "teacher_desc"
+    t.string  "grade"
+    t.time    "time"
+    t.string  "room"
+    t.string  "slug"
+    t.string  "session"
+    t.boolean "session_1",    default: false
+    t.boolean "session_2",    default: false
+    t.boolean "session_3",    default: false
+    t.boolean "session_4",    default: false
   end
 
   add_index "courses", ["name"], name: "index_courses_on_name", unique: true

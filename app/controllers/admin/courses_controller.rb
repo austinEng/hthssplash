@@ -14,6 +14,7 @@ class Admin::CoursesController < ApplicationController
 
   def create
     @course = Course.new(params[:course])
+    debugger
     if @course.save
       flash[:notice] = "Successfully created course! :)"
       redirect_to admin_courses_path
@@ -28,6 +29,7 @@ class Admin::CoursesController < ApplicationController
   end
 
   def update
+    debugger
     @course = Course.friendly.find(params[:id])
     if @course and @course.update_attributes(params[:course])
       flash[:notice] = "Successfully updated course! :)"

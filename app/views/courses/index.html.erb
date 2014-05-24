@@ -7,7 +7,6 @@
       <th>Grade</th>
       <th>Description</th>
       <th>Room</th>
-      <th>Time</th>
     </tr>
     <% @courses.each do |course| %>
       <tr data-link="<%= course_path(course)%>">
@@ -16,7 +15,6 @@
         <td><%= course.grade %></td>
         <td><%= truncate(course.desc, length: 300) %></td>
         <td nowrap><%= course.room %></td>
-        <td nowrap><%= course.time.stamp('1:52 PM') %></td>
       </tr>
     <% end %>
   </table>

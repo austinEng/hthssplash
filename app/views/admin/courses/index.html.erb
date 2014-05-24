@@ -10,7 +10,7 @@
       <th>Grade</th>
       <th>Description</th>
       <th>Room</th>
-      <th>Time</th>
+      <th>Sessions</th>
       <th>Students</th>
       <th>Actions</th>
     </tr>
@@ -21,11 +21,16 @@
         <td><%= course.grade %></td>
         <td><%= truncate(course.desc, length: 200) %></td>
         <td nowrap><%= course.room %></td>
-        <td nowrap><%= course.time.stamp('1:52 PM') %></td>
+        <td>
+          <%= course.session_1 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+          <%= course.session_2 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+          <%= course.session_3 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+          <%= course.session_4 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+        </td>
         <td nowrap><%= course.users.length %></td>
         <td nowrap>
         <%= button_to 'Edit', edit_admin_course_path(course), :method => :get, class: 'btn btn-primary' %>
-        <%= button_to 'Delete', admin_course_path(course), :method => :delete, class: 'btn btn-danger', confirm: 'Are you sure you want to delete this course?' %>
+        <%= button_to 'Delete', admin_course_path(course), :method => :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this course?'}  %>
         </td>
       </tr>
     <% end %>
