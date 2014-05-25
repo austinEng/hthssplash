@@ -9,9 +9,6 @@ function manageRegistered(el) {
     $.ajax({
       url: 'sessions',
       type: 'POST',
-      success: function(result) {
-        $('#schedule-manager').html(result);
-      },
       data: "user_id=" + el.attr('data-user') + "&course_id=" + el.attr('data-course') + "&" + el.attr('data-session') + "=true",
       dataType: 'script'
     });
