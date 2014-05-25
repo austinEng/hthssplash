@@ -1,0 +1,42 @@
+<div class="page-title"><h1>Edit Schedules</h1></div>
+<table id='schedule-manager'>
+  <%= render 'table' %>
+</table>
+<script>
+function manageRegistered(el) {
+  if ( el.parent().children('.registered').length == 0 ) {
+    el.addClass('registered');
+    $.ajax({
+      url: 'sessions',
+      type: 'POST',
+      success: function(result) {
+        $('#schedule-manager').html(result);
+      },
+      data: "user_id=" + el.attr('data-user') + "&course_id=" + el.attr('data-course') + "&" + el.attr('data-session') + "=true",
+      dataType: 'script'
+    });
+  }
+  else if ( el.hasClass('registered') ) {
+    el.removeClass('registered');
+    $.ajax({
+      url: 'sessions/' + el.attr('data-reg'),
+      type: 'DELETE',
+      data: {session: {id: el.attr('data-reg')}},
+      dataType: 'script'
+    });
+  } else {
+    el.parent().children().removeClass('registered');
+    el.addClass('registered');
+    children = el.parent().children()
+    $.ajax({
+      url: 'sessions/' + el.attr('data-reg'),
+      type: 'PUT',
+      data: {session: {session_1: $(children[0]).hasClass('registered'), session_2: $(children[1]).hasClass('registered'), session_3: $(children[2]).hasClass('registered'), session_4: $(children[3]).hasClass('registered'), }},
+      dataType: 'script'
+    });
+  }
+}
+$('.session-toggle').bind('click', function(){
+  manageRegistered($(this));
+});
+</script>

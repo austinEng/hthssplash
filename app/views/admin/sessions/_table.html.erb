@@ -1,0 +1,18 @@
+<tr>
+  <th>User</th>
+  <% @courses.each do |course| %>
+    <th><%= course.name %><br /><%= course.users.count %></th>
+  <% end %>
+</tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <% @courses.each do |course| %>
+      <td>
+        <% ["session_1","session_2","session_3","session_4"].each do |n| %>
+         <div data-user="<%= user.id %>" data-course="<%= course.id %>" data-session="<%= n %>" class="session-toggle <%= 'null' unless course.send(n) %> <%= 'registered' if course.registrations.find_by({user_id: user.id}).try(:send, n) %>" data-reg="<%= course.registrations.find_by({user_id: user.id}).try(:id) %>"></div>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>

@@ -9,7 +9,7 @@
       <th>Grade</th>
       <th>Description</th>
       <th>Room</th>
-      <th>Time</th>
+      <th>Session</th>
       <th>Students</th>
     </tr>
     <% @user.courses.each do |course| %>
@@ -19,7 +19,13 @@
         <td><%= course.grade %></td>
         <td><%= truncate(course.desc, length: 200) %></td>
         <td nowrap><%= course.room %></td>
-        <td nowrap><%= course.time.stamp('1:52 PM') %></td>
+        <td>
+          <% reg = @user.registrations.find_by({course_id: course.id}) %>
+          <%= reg.session_1 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+          <%= reg.session_2 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+          <%= reg.session_3 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+          <%= reg.session_4 ? fa_icon('check-square-o') : fa_icon('square-o') %>
+        </td>
         <td nowrap><%= course.users.length %></td>
       </tr>
     <% end %>

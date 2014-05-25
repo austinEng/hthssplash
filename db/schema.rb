@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523185515) do
+ActiveRecord::Schema.define(version: 20140524145452) do
 
   create_table "courses", force: true do |t|
     t.string  "name"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 20140523185515) do
   create_table "registrations", force: true do |t|
     t.integer "user_id"
     t.integer "course_id"
+    t.boolean "session_1", default: false
+    t.boolean "session_2", default: false
+    t.boolean "session_3", default: false
+    t.boolean "session_4", default: false
   end
 
   create_table "roles", force: true do |t|

@@ -15,5 +15,6 @@ HthsSplash::Application.routes.draw do
   namespace :admin do
     resources :courses
     resources :users
+    resources :sessions
   end
 end
