@@ -10,11 +10,6 @@
     <p>Student Instructor: <%= @course.teacher %></p>
     <p><%= @course.teacher_desc %></p>
   </div>
-  <!--
-  <% if @user.courses.find_by(id: @course.id) %>
-    <%= button_to "Cancel Registration", unregister_course_path(@course), class: "btn btn-danger", :method => :get  %>
-  <% else %>
-    <%= button_to "Register!", register_course_path(@course), class: "btn btn-primary", :method => :get  %>
-  <% end %>
-  -->
+
+  <%= button_to "Register Here!", register_path, class: "btn btn-primary", :method => :get  %>
 </div>

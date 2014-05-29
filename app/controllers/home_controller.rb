@@ -22,4 +22,8 @@ class HomeController < ApplicationController
 
   def essentials
   end
+
+  def register
+
+  end
 end

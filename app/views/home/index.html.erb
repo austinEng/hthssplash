@@ -3,10 +3,8 @@
     <div class="page-title bubble" id="title">
         <div class="bubble-content">
         <%= image_tag(asset_path "logo.png") %>
-        <% unless user_signed_in? %>
-          <br />
-          <%= button_to "Sign In / Register", new_user_session_path, class: "btn btn-primary", :method => :get %>
-        <% end %>
+        <br />
+        <%= button_to "Register", register_path, class: "btn btn-primary", :method => :get %>
         </div>
     </div>
     <div class="section bubble" id="tagline">
